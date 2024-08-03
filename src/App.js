@@ -112,10 +112,10 @@ function App() {
   },[]);
 
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center h-auto'>
       <h1 className='text-2xl text-center font-bold p-10 '>My TO DO LIST</h1>
 
-      <div className='wrapper bg-[#353434] p-5 w-auto ml-auto rounded-sm mr-auto max-h-[80vh] shadow-custom '>
+      <div className='wrapper bg-[#353434] h-auto p-5 w-auto ml-auto rounded-sm mr-auto shadow-custom '>
         <div className='input flex items-center justify-center border-b-slate-800 border-b-2 pb-4 mb-7  '>
          <div className='p-4'>
           <div className='pb-2'>

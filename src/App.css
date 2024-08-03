@@ -1,7 +1,7 @@
 body{
-  background-color: #1f1e1e;
+  background: radial-gradient(circle, #9b59b6, #7a516d, #7c374e, #720b4c, #c31689);
   color: white;
-  overflow: hidden;
+  height: 100vh;
 }
 
 .active{
