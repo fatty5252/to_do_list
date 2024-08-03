@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineEdit } from 'react-icons/ai';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -16,7 +18,7 @@ function App() {
 
   const handleAddTodo = () => {
     if (!newTitle || !newDescription) {
-      alert("Please enter a valid task");
+     toast.error("Please enter both title and description")
       return;
     }
     else {
@@ -113,6 +115,7 @@ function App() {
 
   return (
     <div className='flex flex-col items-center justify-center h-auto'>
+      <ToastContainer position='top-center' autoClose={2000} />
       <h1 className='text-2xl text-center font-bold p-10 '>My TO DO LIST</h1>
 
       <div className='wrapper bg-[#353434] h-auto p-5 w-auto ml-auto rounded-sm mr-auto shadow-custom '>
@@ -145,15 +148,15 @@ function App() {
             className="bg-[#414040] p-3 flex flex-col "
             > 
               <input 
-              className='border-1 border-gray-200 p-3 m-2 rounded-sm '             
+              className='border-1 text-black border-gray-200 p-3 m-2 rounded-sm '             
               onChange={(e)=>handleUpdateTitle(e.target.value)} placeholder='Updated Title'  />
               <textarea
-               className='border-1 border-gray-200 p-3 m-2 rounded-sm ' 
+               className='border-1 text-black border-gray-200 p-3 m-2 rounded-sm ' 
                placeholder='Updated Description'
                rows={4}
               onChange={(e)=>handleUpdatedDescription(e.target.value)}
                />
-               <button onClick={handleUpdatetodo} type='button' className='primary bg-[rgb(0,230,122)] ml-auto mr-auto w-full text-white border-none mt-6 p-3cursor-pointer hover:bg-[rgb(4,196,106)]'>Update</button>
+               <button onClick={handleUpdatetodo} type='button' className='primary bg-[rgb(0,230,122)] ml-auto mr-auto p-2 font-bold text-xl rounded-xl w-32  text-white border-none mt-6 p-3cursor-pointer hover:bg-[rgb(4,196,106)]'>Update</button>
             </div>
            ) :
             (
